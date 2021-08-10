@@ -3,7 +3,7 @@ import { getEmployees } from "./service/scrapper";
 import cors from "cors";
 const app: Application = express();
 
-const PORT = parseInt(process.env.PORT!) | 5000;
+// const PORT = parseInt(process.env.PORT!) | 5000;
 
 app.use(
   cors({
@@ -12,7 +12,7 @@ app.use(
 );
 
 app.get("/", (req: Request, res: Response) => {
-  res.status(200).send(`app is running on ${PORT}`);
+  res.status(200).send(`app is running on ${process.env.PORT}`);
 });
 
 app.get("/employees", async (req: Request, res: Response) => {
@@ -24,4 +24,4 @@ app.get("/employees", async (req: Request, res: Response) => {
     res.status(200).send(data);
   });
 });
-app.listen(PORT);
+app.listen(process.env.PORT);
