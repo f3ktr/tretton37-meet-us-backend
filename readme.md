@@ -2,5 +2,4 @@
 ## Description
 This API has been written by using TypeScript.
 
-Running on Heroku APP.
-The link:
+Running on Heroku.
